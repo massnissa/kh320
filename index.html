@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مسدس المساج KH320 – طلبك الآن</title>
+  <style>
+    :root {
+      --brand: #2563eb; /* أزرق */
+      --accent: #16a34a; /* أخضر */
+      --bg: #f6f7fb;
+      --text: #0f172a;
+      --muted: #64748b;
+      --card: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Tahoma, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    header {
+      background: linear-gradient(135deg, var(--brand), #1e40af);
+      color: #fff;
+      padding: 28px 16px;
+      text-align: center;
+    }
+    header h1 { margin: 0 0 6px; font-size: 28px; }
+    header p { margin: 0; color: #e0e7ff; }
+
+    .wrap {
+      max-width: 860px;
+      margin: 24px auto;
+      padding: 0 12px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    @media (min-width: 860px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+      padding: 16px;
+    }
+    .product img {
+      width: 100%;
+      border-radius: 12px;
+      display: block;
+    }
+    .features {
+      margin-top: 10px; color: var(--muted); font-size: 14px;
+    }
+
+    form label { display: block; margin: 10px 0 6px; font-weight: 600; }
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      background: #fff;
+      font-size: 16px;
+    }
+    form textarea { min-height: 90px; resize: vertical; }
+
+    .totals {
+      margin: 12px 0 4px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 12px;
+      line-height: 1.9;
+      font-size: 15px;
+    }
+    .totals .total { font-weight: 800; font-size: 18px; color: var(--accent); }
+
+    .btn {
+      width: 100%;
+      padding: 14px;
+      margin-top: 10px;
+      background: var(--brand);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    .btn:hover { background: #1e40af; }
+    .hint { color: var(--muted); font-size: 12px; margin-top: 4px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>مسدس المساج KH320</h1>
+    <p>راحة العضلات • 6 سرعات • 4 رؤوس •<br> ضمان الاستبدال • الشاحن الأصلي</p>
+  </header>
+<!-- 🔥 Promo Banner -->
+<div style="background:#dc2626;color:#fff;text-align:center;padding:14px;font-size:18px;font-weight:bold;">
+  🎉 Original & Garantie • <span style="text-decoration:line-through;opacity:0.8;">4200 DA</span> → 
+  <span style="color:#f1dc26;font-size:20px;">2900 DA</span>
+</div>
+
+
+  <div class="wrap">
+    <div class="grid">
+      <!-- Product card -->
+      <section class="card product">
+        <img src="massi.webp" alt="صورة مسدس المساج KH320" />
+        <div class="features">
+            <strong style="line-height: 1.5;">
+                    ✅ تخفيف التشنجات <br>
+             ✅ استرجاع بعد التمرين <br>
+             ✅ هادئ وخفيف <br>
+            ✅  بطارية طويلة المدى<br>
+            ✅  أفضل هدية لأحبائك
+            </strong>
+          
+        
+        </div>
+      </section>
+
+      <!-- Order form -->
+      <section class="card">
+        <h2 style="margin-top:0">اطلب الآن</h2>
+        <form id="orderForm" action="https://formspree.io/f/mbladdbq" method="POST" accept-charset="UTF-8">
+          <!-- Contact & address -->
+          <label for="name">    الاسم  ل</label>
+          <input id="name" name="full_name" type="text" autocomplete="name" required />
+
+          <label for="phone">رقم الهاتف</label>
+          <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="مثال: 0550123456" pattern="^(\+?213|0)(5|6|7)\d{8}$" title="أدخل رقم هاتف جزائري صحيح" required />
+          <div class="hint">الهاتف يستعمل لتأكيد الطلب والتوصيل.</div>
+
+          <label for="address"> العنوان ل</label>
+          <textarea id="address" name="address" placeholder="الحي، البلدية، أقرب نقطة دالة" required></textarea>
+
+          <!-- Wilaya & delivery -->
+          <label for="wilaya">الولاية</label>
+          <select id="wilaya" name="wilaya_code" required>
+            <option value="">اختر الولاية</option>
+            <!-- سيتم ملؤها بالسكريبت -->
+          </select>
+          <div class="hint">سيتم حساب رسوم التوصيل تلقائيًا حسب ولايتك وطريقة التوصيل.</div>
+
+          <label for="delivery">طريقة التوصيل</label>
+          <select id="delivery" name="delivery_type" required>
+            <option value="home">إلى المنزل</option>
+            <option value="desk">مكتب البريد / مكتب الإستلام</option>
+          </select>
+
+          <!-- Price breakdown -->
+          <div class="totals">
+            <div>سعر الجهاز: <strong><span id="basePriceView">—</span></strong> دج</div>
+            <div>رسوم التوصيل: <strong><span id="shippingView">—</span></strong> دج</div>
+            <div class="total">الإجمالي: <strong><span id="totalView">—</span></strong> دج</div>
+          </div>
+
+          <!-- Hidden fields sent to email -->
+          <input type="hidden" name="product" value="KH320 Massage Gun" />
+          <input type="hidden" id="wilaya_name" name="wilaya_name" />
+          <input type="hidden" id="unit_price" name="unit_price_dzd" />
+          <input type="hidden" id="shipping_fee" name="shipping_fee_dzd" />
+          <input type="hidden" id="total_price" name="total_price_dzd" />
+          <input type="hidden" name="_subject" value="طلب جديد – KH320" />
+
+          <button class="btn" type="submit">تأكيد الطلب ✅</button>
+          <div class="hint">بالضغط على "تأكيد الطلب" سيتم إرسال التفاصيل إلى بريد البائع عبر Formspree.</div>
+        </form>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    // ======== القيم الأساسية ========
+    const PRODUCT_PRICE = 2900; // دج
+
+    // 58 ولاية + الرموز الرسمية
+    const WILAYAS = [
+      { code: '01', name: 'أدرار' },
+      { code: '02', name: 'الشلف' },
+      { code: '03', name: 'الأغواط' },
+      { code: '04', name: 'أم البواقي' },
+      { code: '05', name: 'باتنة' },
+      { code: '06', name: 'بجاية' },
+      { code: '07', name: 'بسكرة' },
+      { code: '08', name: 'بشار' },
+      { code: '09', name: 'البليدة' },
+      { code: '10', name: 'البويرة' },
+      { code: '11', name: 'تمنراست' },
+      { code: '12', name: 'تبسة' },
+      { code: '13', name: 'تلمسان' },
+      { code: '14', name: 'تيارت' },
+      { code: '15', name: 'تيزي وزو' },
+      { code: '16', name: 'الجزائر' },
+      { code: '17', name: 'الجلفة' },
+      { code: '18', name: 'جيجل' },
+      { code: '19', name: 'سطيف' },
+      { code: '20', name: 'سعيدة' },
+      { code: '21', name: 'سكيكدة' },
+      { code: '22', name: 'سيدي بلعباس' },
+      { code: '23', name: 'عنابة' },
+      { code: '24', name: 'قالمة' },
+      { code: '25', name: 'قسنطينة' },
+      { code: '26', name: 'المدية' },
+      { code: '27', name: 'مستغانم' },
+      { code: '28', name: 'المسيلة' },
+      { code: '29', name: 'معسكر' },
+      { code: '30', name: 'ورقلة' },
+      { code: '31', name: 'وهران' },
+      { code: '32', name: 'البيض' },
+      { code: '33', name: 'إليزي' },
+      { code: '34', name: 'برج بوعريريج' },
+      { code: '35', name: 'بومرداس' },
+      { code: '36', name: 'الطارف' },
+      { code: '37', name: 'تندوف' },
+      { code: '38', name: 'تيسمسيلت' },
+      { code: '39', name: 'الوادي' },
+      { code: '40', name: 'خنشلة' },
+      { code: '41', name: 'سوق أهراس' },
+      { code: '42', name: 'تيبازة' },
+      { code: '43', name: 'ميلة' },
+      { code: '44', name: 'عين الدفلى' },
+      { code: '45', name: 'النعامة' },
+      { code: '46', name: 'عين تموشنت' },
+      { code: '47', name: 'غرداية' },
+      { code: '48', name: 'غليزان' },
+      { code: '49', name: 'تيميمون' },
+      { code: '50', name: 'برج باجي مختار' },
+      { code: '51', name: 'أولاد جلال' },
+      { code: '52', name: 'بني عباس' },
+      { code: '53', name: 'عين صالح' },
+      { code: '54', name: 'عين قزام' },
+      { code: '55', name: 'تقرت' },
+      { code: '56', name: 'جانت' },
+      { code: '57', name: 'المغير' },
+      { code: '58', name: 'المنيعة' }
+    ];
+
+    // جدول رسوم التوصيل (مثال عملي قابل للتعديل)
+    // home = إلى المنزل، desk = مكتب البريد / مكتب الاستلام
+   const FEES = {
+  // 01 → 58 حسب الترتيب الرسمي
+  '01': { home: 1100, desk: 600 },  // أدرار
+  '02': { home: 700,  desk: 400 },  // الشلف
+  '03': { home: 900,  desk: 500 },  // الأغواط
+  '04': { home: 800,  desk: 500 },  // أم البواقي
+  '05': { home: 800,  desk: 400 },  // باتنة
+  '06': { home: 450,  desk: 250 },  // بجاية
+  '07': { home: 900,  desk: 500 },  // بسكرة
+  '08': { home: 1100, desk: 600 },  // بشار
+  '09': { home: 600,  desk: 350 },  // البليدة
+  '10': { home: 600,  desk: 400 },  // البويرة
+  '11': { home: 1300, desk: 800 },  // تمنراست
+  '12': { home: 800,  desk: 500 },  // تبسة
+  '13': { home: 800,  desk: 400 },  // تلمسان
+  '14': { home: 800,  desk: 400 },  // تيارت
+  '15': { home: 500,  desk: 400 },  // تيزي وزو
+  '16': { home: 500,  desk: 400 },  // الجزائر
+  '17': { home: 900,  desk: 500 },  // الجلفة
+  '18': { home: 600,  desk: 400 },  // جيجل
+  '19': { home: 600,  desk: 400 },  // سطيف
+  '20': { home: 800,  desk: 400 },  // سعيدة
+  '21': { home: 700,  desk: 400 },  // سكيكدة
+  '22': { home: 700,  desk: 400 },  // سيدي بلعباس
+  '23': { home: 700,  desk: 400 },  // عنابة
+  '24': { home: 700,  desk: 400 },  // قالمة
+  '25': { home: 700,  desk: 400 },  // قسنطينة
+  '26': { home: 650,  desk: 400 },  // المدية
+  '27': { home: 700,  desk: 400 },  // مستغانم
+  '28': { home: 800,  desk: 400 },  // المسيلة
+  '29': { home: 700,  desk: 400 },  // معسكر
+  '30': { home: 900,  desk: 500 },  // ورقلة
+  '31': { home: 700,  desk: 400 },  // وهران
+  '32': { home: 1000, desk: 500 },  // البيض
+  '33': { home: 1300, desk: 600 },  // إليزي
+  '34': { home: 600,  desk: 400 },  // برج بوعريريج
+  '35': { home: 600,  desk: 400 },  // بومرداس
+  '36': { home: 800,  desk: 0   },  // الطارف
+  '37': { home: 1300, desk: 600 },  // تندوف
+  '38': { home: 800,  desk: 400 },  // تيسمسيلت
+  '39': { home: 900,  desk: 500 },  // الوادي
+  '40': { home: 800,  desk: 500 },  // خنشلة
+  '41': { home: 800,  desk: 500 },  // سوق أهراس
+  '42': { home: 650,  desk: 400 },  // تيبازة
+  '43': { home: 650,  desk: 400 },  // ميلة
+  '44': { home: 650,  desk: 400 },  // عين الدفلى
+  '45': { home: 1000, desk: 500 },  // النعامة
+  '46': { home: 700,  desk: 400 },  // عين تموشنت
+  '47': { home: 900,  desk: 500 },  // غرداية
+  '48': { home: 700,  desk: 400 },  // غليزان
+
+  // الولايات الجديدة (2019)
+  '49': { home: 1300, desk: 600 },  // تيميمون
+  '50': { home: 900,  desk: 0   },  // برج باجي مختار
+  '51': { home: 900,  desk: 0   },  // أولاد جلال
+  '52': { home: 900,  desk: 0   },  // بني عباس
+  '53': { home: 1300, desk: 600 },  // عين صالح
+  '54': { home: 0,    desk: 0   },  // عين قزام (ماكانش عندك بالجدول → ممكن تحدد)
+  '55': { home: 900,  desk: 0   },  // تقرت
+  '56': { home: 0,    desk: 0   },  // جانت (ماكانش بالجدول)
+  '57': { home: 900,  desk: 0   },  // المغير
+  '58': { home: 1000, desk: 500 }   // المنيعة
+};
+
+
+    // تعبئة قائمة الولايات
+    const wilayaSel = document.getElementById('wilaya');
+    WILAYAS.forEach(w => {
+      const opt = document.createElement('option');
+      opt.value = w.code;
+      opt.textContent = `${w.code} - ${w.name}`;
+      wilayaSel.appendChild(opt);
+    });
+
+    // عناصر العرض والإرسال
+    const basePriceView = document.getElementById('basePriceView');
+    const shippingView  = document.getElementById('shippingView');
+    const totalView     = document.getElementById('totalView');
+    const deliverySel   = document.getElementById('delivery');
+
+    const hiddenWilayaName = document.getElementById('wilaya_name');
+    const hiddenUnit       = document.getElementById('unit_price');
+    const hiddenShipping   = document.getElementById('shipping_fee');
+    const hiddenTotal      = document.getElementById('total_price');
+
+    basePriceView.textContent = PRODUCT_PRICE.toLocaleString('ar-DZ');
+
+    function calcAndRender() {
+      const code = wilayaSel.value;
+      const delivery = deliverySel.value; // 'home' | 'desk'
+
+      const fee = (FEES[code] && FEES[code][delivery]) ? FEES[code][delivery] : 0;
+      const total = PRODUCT_PRICE + fee;
+
+      shippingView.textContent = fee ? fee.toLocaleString('ar-DZ') : '—';
+      totalView.textContent = (code && delivery) ? total.toLocaleString('ar-DZ') : '—';
+
+      const wilayaName = (WILAYAS.find(w => w.code === code) || {}).name || '';
+
+      // hidden fields to Formspree
+      hiddenWilayaName.value = wilayaName;
+      hiddenUnit.value = PRODUCT_PRICE;
+      hiddenShipping.value = fee;
+      hiddenTotal.value = total;
+    }
+
+    wilayaSel.addEventListener('change', calcAndRender);
+    deliverySel.addEventListener('change', calcAndRender);
+
+    // تأكيد تحديث القيم قبل الإرسال
+    document.getElementById('orderForm').addEventListener('submit', function() {
+      calcAndRender();
+    });
+
+    // تشغيل أولي
+    calcAndRender();
+  </script>
+</body>
+</html>
