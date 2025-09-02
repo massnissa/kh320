@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta name="facebook-domain-verification" content="ijkajnr2yqf3yifrwg219iu7j2d8xe" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>مسدس المساج KH320 – طلبك الآن</title>
@@ -94,58 +93,80 @@
     }
     .btn:hover { background: #1e40af; }
     .hint { color: var(--muted); font-size: 12px; margin-top: 4px; }
+
+    /* 🔥 زر طلب عائم */
+    .order-float {
+      position: fixed;
+      top: 16px;        /* أعلى الصفحة */
+      right: 20px;      /* بدّلها left لو تحب */
+      background: var(--accent);
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+      z-index: 9999;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .order-float:hover {
+      background: #15803d;
+      transform: translateY(-2px);
+    }
   </style>
 </head>
 <body>
+  <!-- 🔥 زر طلب عائم -->
+  <button type="button" class="order-float" onclick="scrollToOrder()">اطلب الآن</button>
+
   <header>
     <h1>مسدس المساج KH320</h1>
     <p>راحة العضلات • 6 سرعات • 4 رؤوس •<br> ضمان الاستبدال • الشاحن الأصلي</p>
   </header>
-<!-- 🔥 Promo Banner -->
-<div style="background:#dc2626;color:#fff;text-align:center;padding:14px;font-size:18px;font-weight:bold;">
-  🎉 Original & Garantie • <span style="text-decoration:line-through;opacity:0.8;">4200 DA</span> → 
-  <span style="color:#f1dc26;font-size:20px;">2900 DA</span>
-</div>
 
+  <!-- 🔥 شريط العرض -->
+  <div style="background:#dc2626;color:#fff;text-align:center;padding:14px;font-size:18px;font-weight:bold;">
+    🎉 Original & Garantie • <span style="text-decoration:line-through;opacity:0.8;">4200 DA</span> →
+    <span style="color:#f1dc26;font-size:20px;">3300 DA</span>
+  </div>
 
   <div class="wrap">
     <div class="grid">
-      <!-- Product card -->
+      <!-- بطاقة المنتج -->
       <section class="card product">
         <img src="massi.webp" alt="صورة مسدس المساج KH320" />
         <div class="features">
-            <strong style="line-height: 1.5;">
-                    ✅ تخفيف التشنجات <br>
-             ✅ استرجاع بعد التمرين <br>
-             ✅ هادئ وخفيف <br>
-            ✅  بطارية طويلة المدى<br>
-            ✅  أفضل هدية لأحبائك
-            </strong>
-          
-        
+          <strong style="line-height: 1.5;">
+            ✅ تخفيف التشنجات <br>
+            ✅ استرجاع بعد التمرين <br>
+            ✅ هادئ وخفيف <br>
+            ✅ بطارية طويلة المدى<br>
+            ✅ أفضل هدية لأحبائك
+          </strong>
         </div>
       </section>
 
-      <!-- Order form -->
-      <section class="card">
+      <!-- نموذج الطلب -->
+      <section class="card" id="order-section">
         <h2 style="margin-top:0">اطلب الآن</h2>
         <form id="orderForm" action="https://formspree.io/f/mbladdbq" method="POST" accept-charset="UTF-8">
-          <!-- Contact & address -->
-          <label for="name">    الاسم  ل</label>
+          <!-- بيانات الاتصال -->
+          <label for="name">الاسم</label>
           <input id="name" name="full_name" type="text" autocomplete="name" required />
 
           <label for="phone">رقم الهاتف</label>
-          <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="مثال: 0550123456" pattern="^(\+?213|0)(5|6|7)\d{8}$" title="أدخل رقم هاتف جزائري صحيح" required />
+          <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="مثال: 0550123456"
+                 pattern="^(\+?213|0)(5|6|7)\d{8}$" title="أدخل رقم هاتف جزائري صحيح" required />
           <div class="hint">الهاتف يستعمل لتأكيد الطلب والتوصيل.</div>
 
-          <label for="address"> العنوان ل</label>
+          <label for="address">العنوان</label>
           <textarea id="address" name="address" placeholder="الحي، البلدية، أقرب نقطة دالة" required></textarea>
 
-          <!-- Wilaya & delivery -->
+          <!-- الولاية والتوصيل -->
           <label for="wilaya">الولاية</label>
           <select id="wilaya" name="wilaya_code" required>
             <option value="">اختر الولاية</option>
-            <!-- سيتم ملؤها بالسكريبت -->
           </select>
           <div class="hint">سيتم حساب رسوم التوصيل تلقائيًا حسب ولايتك وطريقة التوصيل.</div>
 
@@ -155,14 +176,14 @@
             <option value="desk">مكتب البريد / مكتب الإستلام</option>
           </select>
 
-          <!-- Price breakdown -->
+          <!-- الأسعار -->
           <div class="totals">
             <div>سعر الجهاز: <strong><span id="basePriceView">—</span></strong> دج</div>
             <div>رسوم التوصيل: <strong><span id="shippingView">—</span></strong> دج</div>
             <div class="total">الإجمالي: <strong><span id="totalView">—</span></strong> دج</div>
           </div>
 
-          <!-- Hidden fields sent to email -->
+          <!-- حقول مخفية تُرسل في الإيميل -->
           <input type="hidden" name="product" value="KH320 Massage Gun" />
           <input type="hidden" id="wilaya_name" name="wilaya_name" />
           <input type="hidden" id="unit_price" name="unit_price_dzd" />
@@ -179,136 +200,65 @@
 
   <script>
     // ======== القيم الأساسية ========
-    const PRODUCT_PRICE = 2900; // دج
+    const PRODUCT_PRICE = 3300; // دج
 
-    // 58 ولاية + الرموز الرسمية
+    // ولايات الجزائر (58)
     const WILAYAS = [
-      { code: '01', name: 'أدرار' },
-      { code: '02', name: 'الشلف' },
-      { code: '03', name: 'الأغواط' },
-      { code: '04', name: 'أم البواقي' },
-      { code: '05', name: 'باتنة' },
-      { code: '06', name: 'بجاية' },
-      { code: '07', name: 'بسكرة' },
-      { code: '08', name: 'بشار' },
-      { code: '09', name: 'البليدة' },
-      { code: '10', name: 'البويرة' },
-      { code: '11', name: 'تمنراست' },
-      { code: '12', name: 'تبسة' },
-      { code: '13', name: 'تلمسان' },
-      { code: '14', name: 'تيارت' },
-      { code: '15', name: 'تيزي وزو' },
-      { code: '16', name: 'الجزائر' },
-      { code: '17', name: 'الجلفة' },
-      { code: '18', name: 'جيجل' },
-      { code: '19', name: 'سطيف' },
-      { code: '20', name: 'سعيدة' },
-      { code: '21', name: 'سكيكدة' },
-      { code: '22', name: 'سيدي بلعباس' },
-      { code: '23', name: 'عنابة' },
-      { code: '24', name: 'قالمة' },
-      { code: '25', name: 'قسنطينة' },
-      { code: '26', name: 'المدية' },
-      { code: '27', name: 'مستغانم' },
-      { code: '28', name: 'المسيلة' },
-      { code: '29', name: 'معسكر' },
-      { code: '30', name: 'ورقلة' },
-      { code: '31', name: 'وهران' },
-      { code: '32', name: 'البيض' },
-      { code: '33', name: 'إليزي' },
-      { code: '34', name: 'برج بوعريريج' },
-      { code: '35', name: 'بومرداس' },
-      { code: '36', name: 'الطارف' },
-      { code: '37', name: 'تندوف' },
-      { code: '38', name: 'تيسمسيلت' },
-      { code: '39', name: 'الوادي' },
-      { code: '40', name: 'خنشلة' },
-      { code: '41', name: 'سوق أهراس' },
-      { code: '42', name: 'تيبازة' },
-      { code: '43', name: 'ميلة' },
-      { code: '44', name: 'عين الدفلى' },
-      { code: '45', name: 'النعامة' },
-      { code: '46', name: 'عين تموشنت' },
-      { code: '47', name: 'غرداية' },
-      { code: '48', name: 'غليزان' },
-      { code: '49', name: 'تيميمون' },
-      { code: '50', name: 'برج باجي مختار' },
-      { code: '51', name: 'أولاد جلال' },
-      { code: '52', name: 'بني عباس' },
-      { code: '53', name: 'عين صالح' },
-      { code: '54', name: 'عين قزام' },
-      { code: '55', name: 'تقرت' },
-      { code: '56', name: 'جانت' },
-      { code: '57', name: 'المغير' },
-      { code: '58', name: 'المنيعة' }
+      { code: '01', name: 'أدرار' }, { code: '02', name: 'الشلف' }, { code: '03', name: 'الأغواط' },
+      { code: '04', name: 'أم البواقي' }, { code: '05', name: 'باتنة' }, { code: '06', name: 'بجاية' },
+      { code: '07', name: 'بسكرة' }, { code: '08', name: 'بشار' }, { code: '09', name: 'البليدة' },
+      { code: '10', name: 'البويرة' }, { code: '11', name: 'تمنراست' }, { code: '12', name: 'تبسة' },
+      { code: '13', name: 'تلمسان' }, { code: '14', name: 'تيارت' }, { code: '15', name: 'تيزي وزو' },
+      { code: '16', name: 'الجزائر' }, { code: '17', name: 'الجلفة' }, { code: '18', name: 'جيجل' },
+      { code: '19', name: 'سطيف' }, { code: '20', name: 'سعيدة' }, { code: '21', name: 'سكيكدة' },
+      { code: '22', name: 'سيدي بلعباس' }, { code: '23', name: 'عنابة' }, { code: '24', name: 'قالمة' },
+      { code: '25', name: 'قسنطينة' }, { code: '26', name: 'المدية' }, { code: '27', name: 'مستغانم' },
+      { code: '28', name: 'المسيلة' }, { code: '29', name: 'معسكر' }, { code: '30', name: 'ورقلة' },
+      { code: '31', name: 'وهران' }, { code: '32', name: 'البيض' }, { code: '33', name: 'إليزي' },
+      { code: '34', name: 'برج بوعريريج' }, { code: '35', name: 'بومرداس' }, { code: '36', name: 'الطارف' },
+      { code: '37', name: 'تندوف' }, { code: '38', name: 'تيسمسيلت' }, { code: '39', name: 'الوادي' },
+      { code: '40', name: 'خنشلة' }, { code: '41', name: 'سوق أهراس' }, { code: '42', name: 'تيبازة' },
+      { code: '43', name: 'ميلة' }, { code: '44', name: 'عين الدفلى' }, { code: '45', name: 'النعامة' },
+      { code: '46', name: 'عين تموشنت' }, { code: '47', name: 'غرداية' }, { code: '48', name: 'غليزان' },
+      { code: '49', name: 'تيميمون' }, { code: '50', name: 'برج باجي مختار' }, { code: '51', name: 'أولاد جلال' },
+      { code: '52', name: 'بني عباس' }, { code: '53', name: 'عين صالح' }, { code: '54', name: 'عين قزام' },
+      { code: '55', name: 'تقرت' }, { code: '56', name: 'جانت' }, { code: '57', name: 'المغير' }, { code: '58', name: 'المنيعة' }
     ];
 
-    // جدول رسوم التوصيل (مثال عملي قابل للتعديل)
-    // home = إلى المنزل، desk = مكتب البريد / مكتب الاستلام
-   const FEES = {
-  // 01 → 58 حسب الترتيب الرسمي
-  '01': { home: 1100, desk: 600 },  // أدرار
-  '02': { home: 700,  desk: 400 },  // الشلف
-  '03': { home: 900,  desk: 500 },  // الأغواط
-  '04': { home: 800,  desk: 500 },  // أم البواقي
-  '05': { home: 800,  desk: 400 },  // باتنة
-  '06': { home: 450,  desk: 250 },  // بجاية
-  '07': { home: 900,  desk: 500 },  // بسكرة
-  '08': { home: 1100, desk: 600 },  // بشار
-  '09': { home: 600,  desk: 350 },  // البليدة
-  '10': { home: 600,  desk: 400 },  // البويرة
-  '11': { home: 1300, desk: 800 },  // تمنراست
-  '12': { home: 800,  desk: 500 },  // تبسة
-  '13': { home: 800,  desk: 400 },  // تلمسان
-  '14': { home: 800,  desk: 400 },  // تيارت
-  '15': { home: 500,  desk: 400 },  // تيزي وزو
-  '16': { home: 500,  desk: 400 },  // الجزائر
-  '17': { home: 900,  desk: 500 },  // الجلفة
-  '18': { home: 600,  desk: 400 },  // جيجل
-  '19': { home: 600,  desk: 400 },  // سطيف
-  '20': { home: 800,  desk: 400 },  // سعيدة
-  '21': { home: 700,  desk: 400 },  // سكيكدة
-  '22': { home: 700,  desk: 400 },  // سيدي بلعباس
-  '23': { home: 700,  desk: 400 },  // عنابة
-  '24': { home: 700,  desk: 400 },  // قالمة
-  '25': { home: 700,  desk: 400 },  // قسنطينة
-  '26': { home: 650,  desk: 400 },  // المدية
-  '27': { home: 700,  desk: 400 },  // مستغانم
-  '28': { home: 800,  desk: 400 },  // المسيلة
-  '29': { home: 700,  desk: 400 },  // معسكر
-  '30': { home: 900,  desk: 500 },  // ورقلة
-  '31': { home: 700,  desk: 400 },  // وهران
-  '32': { home: 1000, desk: 500 },  // البيض
-  '33': { home: 1300, desk: 600 },  // إليزي
-  '34': { home: 600,  desk: 400 },  // برج بوعريريج
-  '35': { home: 600,  desk: 400 },  // بومرداس
-  '36': { home: 800,  desk: 0   },  // الطارف
-  '37': { home: 1300, desk: 600 },  // تندوف
-  '38': { home: 800,  desk: 400 },  // تيسمسيلت
-  '39': { home: 900,  desk: 500 },  // الوادي
-  '40': { home: 800,  desk: 500 },  // خنشلة
-  '41': { home: 800,  desk: 500 },  // سوق أهراس
-  '42': { home: 650,  desk: 400 },  // تيبازة
-  '43': { home: 650,  desk: 400 },  // ميلة
-  '44': { home: 650,  desk: 400 },  // عين الدفلى
-  '45': { home: 1000, desk: 500 },  // النعامة
-  '46': { home: 700,  desk: 400 },  // عين تموشنت
-  '47': { home: 900,  desk: 500 },  // غرداية
-  '48': { home: 700,  desk: 400 },  // غليزان
+    // جدول الرسوم الأصلي
+    const RAW_FEES = {
+      '01': { home: 1100, desk: 600 }, '02': { home: 700, desk: 400 }, '03': { home: 900, desk: 500 },
+      '04': { home: 800, desk: 500 }, '05': { home: 800, desk: 400 }, '06': { home: 450, desk: 250 },
+      '07': { home: 900, desk: 500 }, '08': { home: 1100, desk: 600 }, '09': { home: 600, desk: 350 },
+      '10': { home: 600, desk: 400 }, '11': { home: 1300, desk: 800 }, '12': { home: 800, desk: 500 },
+      '13': { home: 800, desk: 400 }, '14': { home: 800, desk: 400 }, '15': { home: 500, desk: 400 },
+      '16': { home: 500, desk: 400 }, '17': { home: 900, desk: 500 }, '18': { home: 600, desk: 400 },
+      '19': { home: 600, desk: 400 }, '20': { home: 800, desk: 400 }, '21': { home: 700, desk: 400 },
+      '22': { home: 700, desk: 400 }, '23': { home: 700, desk: 400 }, '24': { home: 700, desk: 400 },
+      '25': { home: 700, desk: 400 }, '26': { home: 650, desk: 400 }, '27': { home: 700, desk: 400 },
+      '28': { home: 800, desk: 400 }, '29': { home: 700, desk: 400 }, '30': { home: 900, desk: 500 },
+      '31': { home: 700, desk: 400 }, '32': { home: 1000, desk: 500 }, '33': { home: 1300, desk: 600 },
+      '34': { home: 600, desk: 400 }, '35': { home: 600, desk: 400 }, '36': { home: 800, desk: 0 },
+      '37': { home: 1300, desk: 600 }, '38': { home: 800, desk: 400 }, '39': { home: 900, desk: 500 },
+      '40': { home: 800, desk: 500 }, '41': { home: 800, desk: 500 }, '42': { home: 650, desk: 400 },
+      '43': { home: 650, desk: 400 }, '44': { home: 650, desk: 400 }, '45': { home: 1000, desk: 500 },
+      '46': { home: 700, desk: 400 }, '47': { home: 900, desk: 500 }, '48': { home: 700, desk: 400 },
+      '49': { home: 1300, desk: 600 }, '50': { home: 900, desk: 0 }, '51': { home: 900, desk: 0 },
+      '52': { home: 900, desk: 0 }, '53': { home: 1300, desk: 600 }, '54': { home: 0, desk: 0 },
+      '55': { home: 900, desk: 0 }, '56': { home: 0, desk: 0 }, '57': { home: 900, desk: 0 },
+      '58': { home: 1000, desk: 500 }
+    };
 
-  // الولايات الجديدة (2019)
-  '49': { home: 1300, desk: 600 },  // تيميمون
-  '50': { home: 900,  desk: 0   },  // برج باجي مختار
-  '51': { home: 900,  desk: 0   },  // أولاد جلال
-  '52': { home: 900,  desk: 0   },  // بني عباس
-  '53': { home: 1300, desk: 600 },  // عين صالح
-  '54': { home: 0,    desk: 0   },  // عين قزام (ماكانش عندك بالجدول → ممكن تحدد)
-  '55': { home: 900,  desk: 0   },  // تقرت
-  '56': { home: 0,    desk: 0   },  // جانت (ماكانش بالجدول)
-  '57': { home: 900,  desk: 0   },  // المغير
-  '58': { home: 1000, desk: 500 }   // المنيعة
-};
-
+    // تطبيق خصم 200 دج مع عدم النزول تحت 0
+    const FEES = {};
+    for (const code in RAW_FEES) {
+      const h = RAW_FEES[code].home ?? 0;
+      const d = RAW_FEES[code].desk ?? 0;
+      FEES[code] = {
+        home: Math.max(0, h - 200),
+        desk: Math.max(0, d - 200)
+      };
+    }
 
     // تعبئة قائمة الولايات
     const wilayaSel = document.getElementById('wilaya');
@@ -330,38 +280,47 @@
     const hiddenShipping   = document.getElementById('shipping_fee');
     const hiddenTotal      = document.getElementById('total_price');
 
+    // عرض سعر الجهاز
     basePriceView.textContent = PRODUCT_PRICE.toLocaleString('ar-DZ');
 
+    // الحساب والعرض
     function calcAndRender() {
       const code = wilayaSel.value;
       const delivery = deliverySel.value; // 'home' | 'desk'
 
-      const fee = (FEES[code] && FEES[code][delivery]) ? FEES[code][delivery] : 0;
+      const fee = (FEES[code] && FEES[code][delivery] != null) ? FEES[code][delivery] : 0;
       const total = PRODUCT_PRICE + fee;
 
-      shippingView.textContent = fee ? fee.toLocaleString('ar-DZ') : '—';
-      totalView.textContent = (code && delivery) ? total.toLocaleString('ar-DZ') : '—';
+      shippingView.textContent = (code && delivery) ? fee.toLocaleString('ar-DZ') : '—';
+      totalView.textContent    = (code && delivery) ? total.toLocaleString('ar-DZ') : '—';
 
       const wilayaName = (WILAYAS.find(w => w.code === code) || {}).name || '';
 
-      // hidden fields to Formspree
+      // تعبئة الحقول المخفية
       hiddenWilayaName.value = wilayaName;
-      hiddenUnit.value = PRODUCT_PRICE;
-      hiddenShipping.value = fee;
-      hiddenTotal.value = total;
+      hiddenUnit.value       = PRODUCT_PRICE;
+      hiddenShipping.value   = fee;
+      hiddenTotal.value      = total;
     }
 
+    // استماع للتغييرات
     wilayaSel.addEventListener('change', calcAndRender);
     deliverySel.addEventListener('change', calcAndRender);
 
     // تأكيد تحديث القيم قبل الإرسال
-    document.getElementById('orderForm').addEventListener('submit', function() {
+    document.getElementById('orderForm').addEventListener('submit', function () {
       calcAndRender();
     });
 
     // تشغيل أولي
     calcAndRender();
+
+    // ✅ التمرير السلس إلى نموذج الطلب
+    function scrollToOrder() {
+      document.getElementById("order-section").scrollIntoView({
+        behavior: "smooth"
+      });
+    }
   </script>
 </body>
 </html>
-
